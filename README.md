@@ -1,6 +1,10 @@
 # S24_roboticsII
 ROS2 Workspace for S24 RoboticsII
 
+## Fork the repository
+
+Press the 
+
 ## Cloning the repository 
 On the robot, open a new terminal (via VNC or SSH)
 ```
@@ -11,14 +15,13 @@ git clone https://github.com/eric565648/S24_roboticsII_ws.git [team_name]_ws
 ## Building the ROS2 workspace
 The step will build and ROS2 workspace and compile the packages.
 
-**Important**: You have to compile the package **EVERYTIME** you modify the code, evem the code is written in **PYTHON**
-
-Open/access a docker container via a terminal (VNC or SSH)
+**Docker**: Open/access a docker container via a terminal (VNC or SSH)
 ```
 cd ~/codes/[team_name]_ws
 colcon build
 ```
-or simply build one specific package
+
+**Important**: You have to compile the package **EVERYTIME** you modify the code, even the code is written in **PYTHON**. You can simply build one specific package using the following command. (So you don't have to compile ALL packages.)
 ```
 colcon build --packages-select [package_name]
 ```
@@ -31,11 +34,32 @@ Activate ROS2 environment to run ROS software
 
 The reason you don't need to do this while doing previous mini project is that there's an ROS activation command in `/root/.bashrc` in the docker container. Whenever a terminal is launched, it will exected this bash script once.
 
-Open/access a docker container via a terminal (VNC or SSH)
+**Docker**: Open/access a docker container via a terminal (VNC or SSH)
 ```
 cd ~/codes/[team_name]_ws
 source install/setup.bash
 ```
 
 ## Launch tracking nodes!
-Open a terminal and access docker (via VNC or SSH). Remeber to **Activate ROS2 environment**.
+
+### Color Detection and Tracking Node
+**Docker**: Open a terminal and access docker (via VNC or SSH). Remeber to **Activate ROS2 environment**.
+```
+ros2 launch tracking_control tracking_color_object_launch.py
+```
+
+### Joystick node
+**Docker**: Open another terminal and access docker (via VNC or SSH). Remeber to **Activate ROS2 environment**. In this node, you can control the robot and activate/deactive tracking.
+```
+ros2 run tracking_control tracking_node
+```
+### Launch the robot and camera
+**Docker**: Open another terminal and access docker (via VNC or SSH).
+For the old camera model (astra pro, Robot 1~6)
+```
+ros2 launch tracking_control car_camera_pro_bringup_launch.py
+```
+For the new camera model (astra pro plus, Robot 7~)
+```
+ros2 launch tracking_control car_camera_proplus_bringup_launch.py
+```
