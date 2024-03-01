@@ -3,13 +3,13 @@ ROS2 Workspace for S24 RoboticsII
 
 ## Fork the repository
 
-Press the 
+Press the `Fork` on the page and fork the repo to your account. This will create a repository with exact same content in your github account.
 
 ## Cloning the repository 
 On the robot, open a new terminal (via VNC or SSH)
 ```
 cd ~/codes
-git clone https://github.com/eric565648/S24_roboticsII_ws.git [team_name]_ws
+git clone https://github.com/YOUR_ACCOUNT/S24_roboticsII_ws.git [team_name]_ws
 ```
 
 ## Building the ROS2 workspace
