@@ -19,7 +19,7 @@ class FakeObjPose(Node):
     def timer_update(self):
 
         detected_obj_pose_world = PoseStamped()
-        detected_obj_pose_world.header.frame_id = 'odom'
+        detected_obj_pose_world.header.frame_id = 'base_footprint'
         detected_obj_pose_world.header.stamp = self.get_clock().now().to_msg()
         detected_obj_pose_world.pose.position.x = 2.
         detected_obj_pose_world.pose.position.y = 0.
