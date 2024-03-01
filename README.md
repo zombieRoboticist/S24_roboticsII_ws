@@ -48,10 +48,10 @@ source install/setup.bash
 ros2 launch tracking_control tracking_color_object_launch.py
 ```
 
-### Joystick node
+### Teleoperation node
 **Docker**: Open another terminal and access docker (via VNC or SSH). Remeber to **Activate ROS2 environment**. In this node, you can control the robot and activate/deactive tracking.
 ```
-ros2 run tracking_control tracking_node
+ros2 run tracking_control joy_safety_ctrl
 ```
 ### Launch the robot and camera
 **Docker**: Open another terminal and access docker (via VNC or SSH).
