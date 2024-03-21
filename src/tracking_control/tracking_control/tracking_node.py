@@ -136,7 +136,7 @@ class TrackingNode(Node):
         if self.obj_pose is None:
             cmd_vel = Twist()
             cmd_vel.linear.x = 0.0
-            cmd_vel.angular.z = 0.0
+            cmd_vel.angular.z = 0.5
             self.pub_control_cmd.publish(cmd_vel)
             return
         
@@ -144,23 +144,26 @@ class TrackingNode(Node):
         current_object_pose = self.get_current_object_pose()
         
         # TODO: get the control velocity command
-        cmd_vel = self.controller()
+        cmd_vel = self.controller(current_object_pose)
         
         # publish the control command
         self.pub_control_cmd.publish(cmd_vel)
         #################################################
     
-    def controller(self):
+    def controller(self, current_object_pose):
         # Instructions: You can implement your own control algorithm here
         # feel free to modify the code structure, add more parameters, more input variables for the function, etc.
         
         ########### Write your code here ###########
+        x_offset = 0.5
+        kx = 0.1
+        ka = 0.1
         
         # TODO: Update the control velocity command
         cmd_vel = Twist()
-        cmd_vel.linear.x = 0
+        cmd_vel.linear.x = kx * (current_object_pose.x - x_offset)
         cmd_vel.linear.y = 0
-        cmd_vel.angular.z = 0
+        cmd_vel.angular.z = ka * current_object_pose.z
         return cmd_vel
     
         ############################################
