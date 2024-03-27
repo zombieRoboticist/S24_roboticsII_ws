@@ -156,14 +156,14 @@ class TrackingNode(Node):
         
         ########### Write your code here ###########
         x_offset = 0.3
-        kx = 0.5
-        ka = 0.5
+        kx = 0.3
+        ka = 0.3
         
         # TODO: Update the control velocity command
         cmd_vel = Twist()
-        cmd_vel.linear.x = kx * (current_object_pose[0] - x_offset)
+        cmd_vel.linear.x = 0.0 #kx * (current_object_pose[0] - x_offset)
         cmd_vel.linear.y = 0.0
-        cmd_vel.angular.z = 0.0 #ka * current_object_pose[1]
+        cmd_vel.angular.z = ka * current_object_pose[1]
         return cmd_vel
     
         ############################################
