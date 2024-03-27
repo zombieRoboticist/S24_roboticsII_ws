@@ -155,7 +155,7 @@ class TrackingNode(Node):
         # feel free to modify the code structure, add more parameters, more input variables for the function, etc.
         
         ########### Write your code here ###########
-        x_offset = 0.5
+        x_offset = 0.3
         kx = 0.3
         ka = 0.3
         
