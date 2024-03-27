@@ -155,9 +155,9 @@ class TrackingNode(Node):
         # feel free to modify the code structure, add more parameters, more input variables for the function, etc.
         
         ########### Write your code here ###########
-        x_offset = 0.5
-        kx = 0.1
-        ka = 0.1
+        x_offset = 0.3
+        kx = 0.5
+        ka = 0.5
         
         # TODO: Update the control velocity command
         cmd_vel = Twist()
