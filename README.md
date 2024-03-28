@@ -1,6 +1,6 @@
 # S24_roboticsII
 ROS2 Workspace for S24 RoboticsII
-
+Group 7: Nikolas Hamilton, Cailean Sorce, Scott Wofford, Alexander Borca-Tasciuc
 ## Fork the repository
 
 Press the `Fork` on the page and fork the repo to your account. This will create a repository with exact same content in your github account.
