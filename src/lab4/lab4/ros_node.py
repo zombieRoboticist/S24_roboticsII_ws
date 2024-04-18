@@ -34,7 +34,7 @@ def getControlEffort(pose):
 		values = line.split(',')
 
 		kpx, kpy, kpangle,xOffset,yOffset = map(float, values)
-		print(kx,kp,ky,xOffset,yOffset)
+		#print(kpx,kpy,ky,xOffset,yOffset)
 
 
 	#kpx=1
