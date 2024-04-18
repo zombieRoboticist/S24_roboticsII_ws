@@ -155,7 +155,9 @@ def main():
 			pose = estimatePose(frame)
 			effort = None
 
+
 			if pose:
+				print(pose)
 				#print(getControlEffort(pose)[1], pose[2])
 				effort = getControlEffort(pose)
 
