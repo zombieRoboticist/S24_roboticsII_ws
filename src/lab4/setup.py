@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'object_detection'
+package_name = 'lab4'
 
 setup(
     name=package_name,
@@ -14,14 +14,12 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='yahboom',
-    maintainer_email='eric565648@gmail.com',
+    maintainer_email='nikolashamilton25@gmail.com',
     description='TODO: Package description',
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
-        'console_scripts': [
-            'color_obj_detection = object_detection.color_obj_detection:main',
-            'fake_obj_pose = object_detection.fake_object:main',
+        'console_scripts': ['ros_node = lab4.ros_node:main'
         ],
     },
 )
