@@ -114,7 +114,7 @@ def main():
 	video = cv2.VideoCapture(0)
 	rclpy.init()
 
-	node = rclpy.create_node('teleop_twist_keyboard')
+	node = rclpy.create_node('ros_node')
 
 	# parameters
 	stamped = node.declare_parameter('stamped', False).value
@@ -165,12 +165,12 @@ def main():
 
 
 			if effort:
-				twist.linear.x = effort[0]
-				twist.linear.y = effort[1]
+				twist.linear.x = float(effort[0])
+				twist.linear.y = float(effort[1])
 				twist.linear.z = 0.0
 				twist.angular.x = 0.0
 				twist.angular.y = 0.0
-				twist.angular.z = effort[2]
+				twist.angular.z = float(effort[2])
 			else:
 				twist.linear.x = 0.0
 				twist.linear.y = 0.0
