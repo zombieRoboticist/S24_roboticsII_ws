@@ -16,9 +16,27 @@ else:
 
 
 
-def getControlEffort(pose):
+cachedTime = 0
+kpx = 0
+kpy = 0
+kpangle = 0
+xOffset=.5
+yOffset=0
 
-	kpx=1
+def getControlEffort(pose):
+	global cachedTime,kx,kp,ky
+	if os.stat('pid_values.txt').st_mtime != cachedTime:
+		cachedTime = os.stat('pid_values.txt').st_mtime
+
+		with open("pid_values.txt", "r") as file:
+			line = file.readline().strip()
+		values = line.split(',')
+
+		kpx, kpy, kpangle = map(float, values)
+		print(kx,kp,ky)
+
+
+	#kpx=1
 	kdx=0
 	kix=0
 	errorSumx = 0
@@ -31,15 +49,14 @@ def getControlEffort(pose):
 	errorSumy = 0
 	errorPreviousy = 0
 
-	kpangle=.03
+	#kpangle=.03
 	kdangle=0
 	kiangle=0
 	errorSumangle = 0
 	errorPreviousangle = 0
 
 	#define ideal pose of the robot
-	yOffset=0
-	xOffset=.5
+
 	angleOffset=0
 
 	#define unit conversions
