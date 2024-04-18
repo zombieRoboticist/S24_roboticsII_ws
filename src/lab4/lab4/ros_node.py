@@ -14,6 +14,14 @@ if sys.platform == 'win32':
 else:
 	import termios
 	import tty
+	
+#references:
+#code for opening the ros node and publishing to the topic '/cmd_vel' was modified from the teleop_twist_keyboard package which can be found in this repositoy: https://github.com/ros2/teleop_twist_keyboard/blob/dashing/teleop_twist_keyboard.py
+#information used to setup, build, and deploy this ros node was found in the spring '24 lab 5 assignment of the class 'Introduction to Robot Programing' writen by proffessor Oaks. 
+
+#notes:
+#define a file in S24_roboticsII_ws named 'pid_values.txt'. In that file, seperated by commas put p=kpx,kpy,kpAngle,xOffset,yOffset. make sure they are float values and there arent any spaces or other characters.
+#to get the wheels on the robot to move the 'ros2 run yahboomcar_bringup Mcnamu_driver_X3' node must be run 
 
 
 
