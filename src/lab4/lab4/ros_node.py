@@ -153,19 +153,32 @@ def main():
 		while True:
 			ret,frame = video.read()
 			pose = estimatePose(frame)
-			
+			effort = None
+
 			if pose:
-				print(getControlEffort(pose)[1], pose[2])
+				#print(getControlEffort(pose)[1], pose[2])
+				effort = getControlEffort(pose)
+
 			
 			if stamped:
 				twist_msg.header.stamp = node.get_clock().now().to_msg()
 
-			twist.linear.x = x * speed
-			twist.linear.y = y * speed
-			twist.linear.z = z * speed
-			twist.angular.x = 0.0
-			twist.angular.y = 0.0
-			twist.angular.z = th * turn
+
+			if effort:
+				twist.linear.x = effort[0]
+				twist.linear.y = effort[1]
+				twist.linear.z = 0.0
+				twist.angular.x = 0.0
+				twist.angular.y = 0.0
+				twist.angular.z = effort[2]
+			else:
+				twist.linear.x = 0
+				twist.linear.y = 0
+				twist.linear.z = 0
+				twist.angular.x = 0
+				twist.angular.y = 0
+				twist.angular.z = 0
+			
 			pub.publish(twist_msg)
 
 	except Exception as e:
