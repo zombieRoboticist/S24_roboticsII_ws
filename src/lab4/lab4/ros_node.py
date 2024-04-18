@@ -25,7 +25,7 @@ xOffset=.5
 yOffset=0
 
 def getControlEffort(pose):
-	global cachedTime,kx,kp,ky
+	global cachedTime,kx,kp,ky,xOffset,yOffset
 	if os.stat('pid_values.txt').st_mtime != cachedTime:
 		cachedTime = os.stat('pid_values.txt').st_mtime
 
