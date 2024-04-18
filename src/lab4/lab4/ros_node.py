@@ -152,7 +152,7 @@ def main():
 	try:
 		while True:
 			ret,frame = video.read()
-			pose = None#estimatePose(frame)
+			pose = estimatePose(frame)
 			effort = None
 
 			if pose:
