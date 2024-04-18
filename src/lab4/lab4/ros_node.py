@@ -111,7 +111,7 @@ def estimatePose(frame):
 		
 
 def main():
-	video = cv2.VideoCapture(0)
+	video = cv2.VideoCapture('/dev/video1')
 	rclpy.init()
 
 	node = rclpy.create_node('ros_node')
