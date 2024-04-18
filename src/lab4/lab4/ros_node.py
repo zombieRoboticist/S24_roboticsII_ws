@@ -172,12 +172,12 @@ def main():
 				twist.angular.y = 0.0
 				twist.angular.z = effort[2]
 			else:
-				twist.linear.x = 0
-				twist.linear.y = 0
-				twist.linear.z = 0
-				twist.angular.x = 0
-				twist.angular.y = 0
-				twist.angular.z = 0
+				twist.linear.x = 0.0
+				twist.linear.y = 0.0
+				twist.linear.z = 0.0
+				twist.angular.x = 0.0
+				twist.angular.y = 0.0
+				twist.angular.z = 0.0
 			
 			pub.publish(twist_msg)
 
