@@ -33,8 +33,8 @@ def getControlEffort(pose):
 			line = file.readline().strip()
 		values = line.split(',')
 
-		kpx, kpy, kpangle = map(float, values)
-		print(kx,kp,ky)
+		kpx, kpy, kpangle,xOffset,yOffset = map(float, values)
+		print(kx,kp,ky,xOffset,yOffset)
 
 
 	#kpx=1
