@@ -4,6 +4,7 @@ import socket
 import json
 import sys
 import threading
+import os
 
 import geometry_msgs.msg
 import rclpy
